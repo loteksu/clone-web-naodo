@@ -1,4 +1,5 @@
 <?php
+require('./Model/database.php');
 require './Controller/Controller.php';
 $controllerName = ucfirst((strtolower($_REQUEST['controller'])) . 'Controller');
 if ($controllerName == 'Controller') {

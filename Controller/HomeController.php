@@ -2,10 +2,21 @@
 
 class HomeController extends Controller
 {
+    private $HomeModel;
+
+    public function __construct()
+    {
+        $this->loadModel('HomeModel');
+        $this->HomeModel = new HomeModel;
+
+    }
     public function index()
     {
-        return $this->view('.Home');
+        $data = [];
+        $data = $this->HomeModel->getAll();
+        return $this->view('.Home', $data);
 
     }
 
 }
+?>

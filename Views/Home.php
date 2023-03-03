@@ -4,6 +4,9 @@
     <!--Header -->
     <?php require 'Views/Layouts/Header.php' ?>
     <!--Body-->
+    <?php
+    print_r($data);
+    ?>
     <section class="home-section section-hero overlay bg-image"
         style="background-image: url('/php/Assets/images/hero_1.jpg');" id="home-section">
         <div class="container">
