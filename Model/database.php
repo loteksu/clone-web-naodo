@@ -1,23 +1,23 @@
 <?php
-class database
+class database extends PDO
 {
-    const username = "root"; // Khai báo username
-    const password = ""; // Khai báo password
-    const server = "localhost"; // Khai báo server
-    const dbname = "test"; // Khai báo database
-    private $connect;
-    public function connect()
+    //const username = "root"; // Khai báo username
+    //const password = ""; // Khai báo password
+    //const server = "localhost"; // Khai báo server
+    // const dbname = "test"; // Khai báo database
+
+
+    function __construct($connect, $username, $pass)
     {
-
-        $this->connect = mysqli_connect(self::server, self::username, self::password, self::dbname);
-        if (mysqli_connect_errno() === 0) {
-            return $this->connect;
-        }
-
+        parent::__construct($connect, $username, $pass);
+        //$db = new PDO($connect,$username,$pass);
     }
 
+    public function select($table)
+    {
+        $sql = "SELECT * FROM $table ";
+        $statement = $this->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
 }
-
-
-echo "Khi kết nối thành công sẽ tiếp tục dòng code bên dưới đây."
-    ?>
