@@ -20,4 +20,38 @@ class database extends PDO
         $statement->execute();
         return $statement->fetchAll();
     }
+
+    public function selectByID($table, $Id)
+    {
+        $sql = "SELECT * FROM $table WHERE Id = $Id";
+        $statement = $this->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
+    public function ExcuteSql($sql)
+    {
+        $statement = $this->prepare($sql);
+        $statement->execute();
+        //return $statement->fetchAll(); 
+    }
+    public function checkLogin($sql)
+    {
+        $statement = $this->prepare($sql);
+        $statement->execute();
+        return $statement->fetchColumn();
+    }
+
+    public function ExcuteSqlWithReturn($sql)
+    {
+    }
+
+    public function getLogin($sql)
+    {
+        $statement = $this->prepare($sql);
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    //public function update($table, $data, $cond)
 }

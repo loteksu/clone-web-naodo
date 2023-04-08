@@ -1234,7 +1234,7 @@ h4 {
   height: auto;
   min-height: auto;
   padding-top: 6em;
-  padding-bottom: 3em;
+  padding-bottom: 0.5em;
 }
 
 .section-hero.overlay,

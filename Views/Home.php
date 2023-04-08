@@ -4,11 +4,12 @@
     <!--Header -->
     <?php require 'Views/Layouts/Header.php' ?>
     <!--Body-->
-    <?php
-    print_r($data);
-    ?>
-    <section class="home-section section-hero overlay bg-image"
-        style="background-image: url('/php/Assets/images/hero_1.jpg');" id="home-section">
+    <p>
+        <?php foreach ($data as $key => $value) {
+            print_r($value);
+        } ?>
+    </p>
+    <section class="home-section section-hero overlay bg-image" style="background-image: url('/php/Assets/images/hero_1.jpg');" id="home-section">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-12">
@@ -21,12 +22,10 @@
                     <form method="post" class="search-jobs-form">
                         <div class="row mb-5">
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                <input type="text" class="form-control form-control-lg"
-                                    placeholder="Job title, Company...">
+                                <input type="text" class="form-control form-control-lg" placeholder="Job title, Company...">
                             </div>
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%"
-                                    data-live-search="true" title="Select Region">
+                                <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Region">
                                     <option>Anywhere</option>
                                     <option>San Francisco</option>
                                     <option>Palo Alto</option>
@@ -39,16 +38,13 @@
                                 </select>
                             </div>
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%"
-                                    data-live-search="true" title="Select Job Type">
+                                <select class="selectpicker" data-style="btn-white btn-lg" data-width="100%" data-live-search="true" title="Select Job Type">
                                     <option>Part Time</option>
                                     <option>Full Time</option>
                                 </select>
                             </div>
                             <div class="col-12 col-sm-6 col-md-6 col-lg-3 mb-4 mb-lg-0">
-                                <button type="submit"
-                                    class="btn btn-primary btn-lg btn-block text-white btn-search"><span
-                                        class="icon-search icon mr-2"></span>Search Job</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block text-white btn-search"><span class="icon-search icon mr-2"></span>Search Job</button>
                             </div>
                         </div>
                         <div class="row">
@@ -70,4 +66,3 @@
         </a>
     </section>
 </div>
-<!-- PHP loz -->
